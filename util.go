@@ -51,7 +51,6 @@ func hasValue(field reflect.Value) bool {
 	case reflect.Slice, reflect.Map, reflect.Ptr, reflect.Interface, reflect.Chan, reflect.Func:
 		return !field.IsNil()
 	default:
-		return field.IsValid() && field.Interface() != reflect.Zero(field.Type()).Interface()
 		if !field.IsValid() {
 			return false
 		}
